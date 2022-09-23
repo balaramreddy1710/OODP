@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h> 
-
+#include <string.h>
 int main()
 {
   FILE * fptr;
-  char ch, * word, * a;
-  int i=0,p=0;
+  char str[100],*a,* word;
+  int i=0,j=0;
 
-  word =(char *) malloc(25 * sizeof(char));
+  word =(char *)malloc(25 * sizeof(char));
   fptr = fopen("text.txt", "r");
 
   if (fptr==NULL)
@@ -18,31 +18,24 @@ int main()
   {
     printf("Word: ");
     scanf("%s", word);
-
-    while(word[p]!='\0')
+    while ((fgets(str, 100, fptr)) != NULL)
     {
-      p++;
+      while ((a = strstr(str + j, word)) != NULL)
+        {
+      j = (a - str) + 1;
+
+      i++;
+        }
     }
 
-    a=(char *) malloc(p * sizeof(char));
-
-    while (*(ch+a) != EOF)
-    {
-      *(ch+a) = getc(fptr);
-
-      if (*(ch+a) == * word)
-      {
-        i++;
-      }
-    }
-  }  
-  if (i==0)
+  }
+  if (i==0){
     printf("Word not found.\n");
+  }
   else
   {
     printf("Word found %d times.\n",i);
   }
-
   fclose(fptr);
   return 0;
 }

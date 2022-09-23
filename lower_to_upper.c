@@ -5,7 +5,7 @@ int main()
 {
     int ch = 0;
     FILE *fp = NULL;
-    fp = fopen("file.txt", "r");
+    fp = fopen("text.txt", "r");
     if(fp == NULL)
     {
         printf("Error in creating the file\n");
@@ -26,7 +26,7 @@ int main()
     }
     fclose(fp);
     fclose(fpTmp);
-    remove("file.txt");
-    rename("tmp.txt","file.txt");
+    remove("text.txt");
+    rename("tmp.txt","text.txt");
     return 0;
 }

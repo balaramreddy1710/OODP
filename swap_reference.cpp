@@ -16,3 +16,4 @@ int main()
         swap(a,b);
         cout << "After swapping"<<"\n A = "<< a << "\n B = " << b << endl;
         return 0;
+}

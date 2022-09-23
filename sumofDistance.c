@@ -22,7 +22,7 @@ int main(){
     resultant.ft = dis1.ft + dis2.ft;
     resultant.in = dis1.in + dis2.in;
 
-    while (resultant.in >= 12.0){
+    if (resultant.in >= 12.0){
         resultant.in = resultant.in - 12.0;
         ++resultant.ft;}
     printf("\nSum of distances = %d\'-%.1f\"", resultant.ft, resultant.in);
