@@ -14,7 +14,7 @@ public:
 
     ~Volume()
     {
-        cout << "The volume of a cube of side length " << side << " is " << side * side * side;
+        cout << "The volume of a cube of side length " << side << " is " << side * side * side << "cubic units";
     }
 };
 
